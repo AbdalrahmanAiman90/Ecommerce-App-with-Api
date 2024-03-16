@@ -2,13 +2,13 @@ abstract class AuthState {}
 
 class AuthInitialState extends AuthState {}
 
-class AuthLodingState extends AuthState {}
+class RegisterLodingState extends AuthState {}
 
-class AuthSuccsesState extends AuthState {}
+class RegisterSuccsesState extends AuthState {}
 
-class AuthFauilerState extends AuthState {
+class RegisterFauilerState extends AuthState {
   String ErrorMassege;
-  AuthFauilerState({required this.ErrorMassege});
+  RegisterFauilerState({required this.ErrorMassege});
 }
 
 class LoginLoadingState extends AuthState {}

@@ -43,7 +43,7 @@ class MySnackBar {
   }
 }
 
-Widget Textinbutton(
+Widget Textbutton(
     {required String firsttext,
     required String secondtext,
     required BuildContext context,

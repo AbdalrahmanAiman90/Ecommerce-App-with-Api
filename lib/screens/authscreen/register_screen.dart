@@ -1,7 +1,11 @@
+import 'package:ecommerce_api/main.dart';
 import 'package:ecommerce_api/screens/authscreen/auth_cubit/auth_cubit.dart';
 import 'package:ecommerce_api/screens/authscreen/auth_cubit/auth_state.dart';
 import 'package:ecommerce_api/screens/authscreen/login_screen.dart';
-import 'package:ecommerce_api/screens/home_screen.dart';
+import 'package:ecommerce_api/screens/homescreen/home_screen.dart';
+import 'package:ecommerce_api/screens/layoutscreen/layout_screen.dart';
+import 'package:ecommerce_api/screens/layoutscreen/layoutcubit/layout._cubit.dart';
+import 'package:ecommerce_api/shard/custom_wedget.dart';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -21,12 +25,12 @@ class RegisterScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BlocConsumer<AuthCubit, AuthState>(
-      listener: (context, state) {
-        if (state is AuthFauilerState) {
+      listener: (context, state) async {
+        if (state is RegisterFauilerState) {
           MySnackBar.showErrorMessage(context, state.ErrorMassege);
-        } else if (state is AuthSuccsesState) {
-          Navigator.pushReplacement(context,
-              MaterialPageRoute(builder: (context) => const HomeScreen()));
+        } else if (state is RegisterSuccsesState) {
+          Navigator.pushReplacement(
+              context, MaterialPageRoute(builder: (context) => MyApp()));
         }
       },
       builder: (context, state) {
@@ -106,7 +110,7 @@ class RegisterScreen extends StatelessWidget {
                       },
                       minWidth: double.infinity,
                       // ignore: sort_child_properties_last
-                      child: state is AuthLodingState
+                      child: state is RegisterLodingState
                           ? const CircularProgressIndicator()
                           : const Text(
                               "Register",
@@ -120,7 +124,7 @@ class RegisterScreen extends StatelessWidget {
                     const SizedBox(
                       height: 15,
                     ),
-                    Textinbutton(
+                    Textbutton(
                         context: context,
                         onTap: () {
                           Navigator.pushReplacement(
@@ -143,75 +147,4 @@ class RegisterScreen extends StatelessWidget {
       },
     );
   }
-}
-
-Widget MyText(
-    {bool? isobsert,
-    InputBorder? border,
-    String? Function(String?)? validator,
-    required TextEditingController controler,
-    required String hinttext}) {
-  return TextFormField(
-    obscureText: isobsert ?? false,
-    controller: controler,
-    decoration: InputDecoration(
-      hintText: hinttext,
-      border: border,
-    ),
-    validator: validator ??
-        (value) {
-          if (value!.isEmpty) {
-            return "should enter ${hinttext}";
-          } else {
-            return null;
-          }
-        },
-  );
-}
-
-class MySnackBar {
-  static void showErrorMessage(BuildContext context, String errorMessage) {
-    ScaffoldMessenger.of(context).showSnackBar(
-      SnackBar(
-        duration: const Duration(seconds: 5),
-        dismissDirection: DismissDirection.up,
-        behavior: SnackBarBehavior.floating,
-        backgroundColor: const Color.fromARGB(209, 194, 7, 1),
-        content: Container(
-          child: Text(
-            errorMessage,
-            style: const TextStyle(fontSize: 20),
-          ),
-        ),
-      ),
-    );
-  }
-}
-
-Widget Textinbutton(
-    {required String firsttext,
-    required String secondtext,
-    required BuildContext context,
-    required void Function()? onTap}) {
-  return Row(
-    children: [
-      Text(
-        firsttext,
-        style: const TextStyle(
-          fontSize: 18,
-          color: Colors.black,
-        ),
-      ),
-      GestureDetector(
-        onTap: onTap,
-        child: Text(
-          secondtext,
-          style: const TextStyle(
-              fontSize: 20,
-              color: Color.fromARGB(255, 4, 74, 131),
-              fontWeight: FontWeight.bold),
-        ),
-      )
-    ],
-  );
 }

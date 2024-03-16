@@ -1,8 +1,11 @@
-import 'package:ecommerce_api/const.dart';
+import 'package:ecommerce_api/main.dart';
+import 'package:ecommerce_api/screens/layoutscreen/layout_screen.dart';
+import 'package:ecommerce_api/shard/const.dart';
 import 'package:ecommerce_api/screens/authscreen/auth_cubit/auth_cubit.dart';
 import 'package:ecommerce_api/screens/authscreen/auth_cubit/auth_state.dart';
 import 'package:ecommerce_api/screens/authscreen/register_screen.dart';
-import 'package:ecommerce_api/screens/home_screen.dart';
+import 'package:ecommerce_api/screens/homescreen/home_screen.dart';
+import 'package:ecommerce_api/shard/custom_wedget.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -76,31 +79,35 @@ class LoginScreen extends StatelessWidget {
                           ),
                           BlocConsumer<AuthCubit, AuthState>(
                             listener: (context, state) {
+                              //Eroor state
                               if (state is FailedToLoginState) {
                                 MySnackBar.showErrorMessage(
                                     context, state.ErrorMassege);
-                              } else if (state is LoginSuccessState) {
+                              }
+                              //Sucsess State
+                              else if (state is LoginSuccessState) {
                                 Navigator.pushReplacement(
                                     context,
                                     MaterialPageRoute(
-                                        builder: (context) =>
-                                            const HomeScreen()));
+                                        builder: (context) => MyApp()));
                               }
                             },
                             builder: (context, state) {
                               return MaterialButton(
                                 height: 50,
-                                onPressed: () {
+                                onPressed: () async {
                                   if (formkey.currentState!.validate()) {
-                                    BlocProvider.of<AuthCubit>(context).Login(
-                                        email: Email.text,
-                                        password: password.text);
+                                    await BlocProvider.of<AuthCubit>(context)
+                                        .Login(
+                                            email: Email.text,
+                                            password: password.text);
                                   }
                                 },
                                 minWidth: double.infinity,
                                 color: buttoncolor,
                                 shape: RoundedRectangleBorder(
-                                    borderRadius: BorderRadius.circular(8)),
+                                  borderRadius: BorderRadius.circular(8),
+                                ),
                                 child: state is LoginLoadingState
                                     ? const CircularProgressIndicator()
                                     : const Text(
@@ -110,10 +117,10 @@ class LoginScreen extends StatelessWidget {
                               );
                             },
                           ),
-                          SizedBox(
+                          const SizedBox(
                             height: 15,
                           ),
-                          Textinbutton(
+                          Textbutton(
                               onTap: () {
                                 Navigator.pushReplacement(
                                     context,
