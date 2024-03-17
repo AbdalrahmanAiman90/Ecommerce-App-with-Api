@@ -1,16 +1,30 @@
-# ecommerce_api
+# About
 
-A new Flutter project.
+This is a Flutter-based e-commerce application built to provide users with a seamless shopping experience.
+This application has very good features that made me learn a lot more about Flutter and how use Cubit 
 
-## Getting Started
 
-This project is a starting point for a Flutter application.
+## Features
+- User authentication and profile management
+- Add products to cart
+- Add Product to Favorit
+- change password
+- Update User Data 
+- View the products available in Store
+## Technologies Used
+- Flutter
+- Api (for adding or removing iteam and authentication)
+- Bloc/Cubit (for state management)
+- Shared Preferences (for local data storage)
+- CashNetworkImage (for caching network images)
+## Installation
+1. Clone this repository.
+2. Navigate to the project directory.
+3. Run `flutter pub get` to install dependencies.
+4. Run the app using `flutter run`.
 
-A few resources to get you started if this is your first Flutter project:
+## preview
+- splash Screen
+- ![Screenshot 2024-03-17 023359](https://github.com/AbdalrahmanAiman90/Flutter_eCommerce_shop/assets/75572457/993c1bcf-5ba5-4e04-835c-65285d180931)
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
