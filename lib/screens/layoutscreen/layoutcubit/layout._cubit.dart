@@ -1,10 +1,8 @@
 import 'dart:convert';
-import 'dart:developer';
 
 import 'package:ecommerce_api/model/banner_model.dart';
 import 'package:ecommerce_api/model/catigory_model.dart';
 import 'package:ecommerce_api/model/product_model.dart';
-import 'package:ecommerce_api/screens/authscreen/auth_cubit/auth_state.dart';
 import 'package:ecommerce_api/screens/cartscreen/cart_screen.dart';
 import 'package:ecommerce_api/screens/catigoryscreen/category_screen.dart';
 import 'package:ecommerce_api/screens/favoritscreen/favorit_screen.dart';

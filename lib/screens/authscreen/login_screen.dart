@@ -1,10 +1,8 @@
 import 'package:ecommerce_api/main.dart';
-import 'package:ecommerce_api/screens/layoutscreen/layout_screen.dart';
 import 'package:ecommerce_api/shard/const.dart';
 import 'package:ecommerce_api/screens/authscreen/auth_cubit/auth_cubit.dart';
 import 'package:ecommerce_api/screens/authscreen/auth_cubit/auth_state.dart';
 import 'package:ecommerce_api/screens/authscreen/register_screen.dart';
-import 'package:ecommerce_api/screens/homescreen/home_screen.dart';
 import 'package:ecommerce_api/shard/custom_wedget.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';

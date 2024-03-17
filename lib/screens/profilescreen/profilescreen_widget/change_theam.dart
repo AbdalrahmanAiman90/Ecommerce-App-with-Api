@@ -18,7 +18,6 @@ class _ChangTheamState extends State<ChangTheam> {
 
   @override
   Widget build(BuildContext context) {
-    print("999999999999${stut}9999999999999");
     return BlocConsumer<LayoutCubit, LayoutState>(
       listener: (context, state) {
         if (state is AppLightTheamState ||
@@ -40,7 +39,6 @@ class _ChangTheamState extends State<ChangTheam> {
             title: const Text("Change Color"),
             value: stut,
             onChanged: (value) {
-              print('==========================${value}');
               if (stut == false) {
                 BlocProvider.of<LayoutCubit>(context)
                     .ChangeTheam(TheamState.dark);

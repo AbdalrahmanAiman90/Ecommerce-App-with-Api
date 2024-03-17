@@ -1,6 +1,3 @@
-import 'package:ecommerce_api/main.dart';
-import 'package:ecommerce_api/screens/authscreen/login_screen.dart';
-import 'package:ecommerce_api/screens/homescreen/home_screen.dart';
 import 'package:ecommerce_api/screens/layoutscreen/layout_screen.dart';
 import 'package:ecommerce_api/screens/layoutscreen/layoutcubit/layout_state.dart';
 import 'package:ecommerce_api/shard/const.dart';

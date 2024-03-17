@@ -2,15 +2,11 @@ import 'package:ecommerce_api/main.dart';
 import 'package:ecommerce_api/screens/authscreen/auth_cubit/auth_cubit.dart';
 import 'package:ecommerce_api/screens/authscreen/auth_cubit/auth_state.dart';
 import 'package:ecommerce_api/screens/authscreen/login_screen.dart';
-import 'package:ecommerce_api/screens/homescreen/home_screen.dart';
-import 'package:ecommerce_api/screens/layoutscreen/layout_screen.dart';
-import 'package:ecommerce_api/screens/layoutscreen/layoutcubit/layout._cubit.dart';
+
 import 'package:ecommerce_api/shard/custom_wedget.dart';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-
-import 'auth_cubit/auth_state.dart';
 
 class RegisterScreen extends StatelessWidget {
   RegisterScreen({super.key});

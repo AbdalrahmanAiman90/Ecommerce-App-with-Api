@@ -1,5 +1,3 @@
-import 'dart:developer';
-
 import 'package:ecommerce_api/shard/const.dart';
 import 'package:ecommerce_api/screens/layoutscreen/layoutcubit/layout._cubit.dart';
 import 'package:ecommerce_api/screens/layoutscreen/layoutcubit/layout_state.dart';

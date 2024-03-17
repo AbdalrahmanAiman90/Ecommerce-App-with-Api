@@ -2,10 +2,8 @@ import 'dart:convert';
 import 'dart:developer';
 
 import 'package:ecommerce_api/screens/authscreen/auth_cubit/auth_state.dart';
-import 'package:ecommerce_api/screens/layoutscreen/layoutcubit/layout._cubit.dart';
 import 'package:ecommerce_api/shard/const.dart';
 import 'package:ecommerce_api/shard/local_network.dart';
-import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:http/http.dart' as http;
 import 'package:http/http.dart';
