@@ -12,6 +12,7 @@ This application has very good features that made me learn a lot more about Flut
 - change password
 - Update User Data 
 - View the products available in Store
+- using Shared Preferences to store user settings (e.g., theme preferences,FavoritProduct... ),
 ## Technologies Used
 - Flutter
 - Api (for adding or removing iteam and authentication)
