@@ -6,6 +6,7 @@ This application has very good features that made me learn a lot more about Flut
 
 ## Features
 - User authentication and profile management
+-  handle error authentication
 - Add products to cart
 - Add Product to Favorit
 - change password
