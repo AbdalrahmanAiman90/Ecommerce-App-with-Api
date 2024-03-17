@@ -24,6 +24,7 @@ This application has very good features that made me learn a lot more about Flut
 4. Run the app using `flutter run`.
 
 ## preview
+- splash Screen
 ![Screenshot 2024-03-17 023359](https://github.com/AbdalrahmanAiman90/Flutter_eCommerce_shop/assets/75572457/993c1bcf-5ba5-4e04-835c-65285d180931)
 
 
