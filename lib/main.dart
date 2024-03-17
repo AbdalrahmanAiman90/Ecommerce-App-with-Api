@@ -49,33 +49,20 @@ class MyApp extends StatelessWidget {
             ..GetUserDate(),
         ),
       ],
-      child: BlocBuilder<LayoutCubit, LayoutState>(
-        builder: (context, state) {
-          LayoutCubit()..GetUserDate();
-
-          if (CashNetwork.GetFromCash(key: 'theam') == "dark") {
-            return MaterialApp(
-              theme: ThemeData.dark(),
-              home: token != null &&
-                      token != "" &&
-                      CurrentPassword != null &&
-                      CurrentPassword != ""
-                  ? LayoutScreen()
-                  : LoginScreen(),
-            );
-          } else {
-            return MaterialApp(
-              theme: ThemeData.light(),
-              home: token != null &&
-                      token != "" &&
-                      CurrentPassword != null &&
-                      CurrentPassword != ""
-                  ? LayoutScreen()
-                  : LoginScreen(),
-            );
-          }
-        },
-      ),
+      child: BlocBuilder<LayoutCubit, LayoutState>(builder: (context, state) {
+        return MaterialApp(
+          debugShowCheckedModeBanner: false,
+          theme: CashNetwork.GetFromCash(key: 'theam') == "dark"
+              ? ThemeData.dark()
+              : ThemeData.light(),
+          home: token != null &&
+                  token != "" &&
+                  CurrentPassword != null &&
+                  CurrentPassword != ""
+              ? SplashScreen()
+              : LoginScreen(),
+        );
+      }),
     );
   }
 }

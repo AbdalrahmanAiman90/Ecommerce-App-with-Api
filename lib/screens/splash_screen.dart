@@ -1,4 +1,5 @@
 import 'package:ecommerce_api/screens/homescreen/home_screen.dart';
+import 'package:ecommerce_api/screens/layoutscreen/layout_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 
@@ -12,9 +13,9 @@ class SplashScreen extends StatefulWidget {
 class _SplashScreenState extends State<SplashScreen> {
   @override
   void initState() {
-    Future.delayed(Duration(seconds: 3), () {
+    Future.delayed(Duration(seconds: 5), () {
       Navigator.pushReplacement(
-          context, MaterialPageRoute(builder: (context) => HomeScreen()));
+          context, MaterialPageRoute(builder: (context) => LayoutScreen()));
     });
     super.initState();
   }
